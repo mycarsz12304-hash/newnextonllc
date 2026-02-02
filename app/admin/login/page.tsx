@@ -32,8 +32,9 @@ export default function AdminLoginPage() {
     // Check credentials
     if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
       // Set a session cookie/flag
-      document.cookie = "admin_session=authenticated; path=/; max-age=86400";
-      router.push("/admin");
+      document.cookie = "admin_session=authenticated; path=/; max-age=86400; SameSite=Lax";
+      // Force a hard navigation to ensure middleware picks up the cookie
+      window.location.href = "/admin";
     } else {
       setError("Invalid email or password");
       setLoading(false);
