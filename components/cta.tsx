@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Clock } from "lucide-react"
+import { ArrowRight, Clock, MessageCircle } from "lucide-react"
 
 export function Cta() {
   return (
@@ -42,9 +42,13 @@ export function Cta() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground/20 bg-transparent px-8 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                className="gap-2 border-primary-foreground/20 bg-transparent px-8 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                asChild
               >
-                Schedule a Call
+                <Link href="https://wa.link/d9r319" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-4 w-4" />
+                  Chat on WhatsApp
+                </Link>
               </Button>
             </div>
           </div>

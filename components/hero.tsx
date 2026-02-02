@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Clock, Shield, Globe } from "lucide-react"
+import { ArrowRight, Clock, Shield, Globe, MessageCircle } from "lucide-react"
 
 export function Hero() {
   return (
@@ -34,8 +34,11 @@ export function Hero() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" className="px-8 bg-transparent">
-              Book a Consultation
+            <Button variant="outline" size="lg" className="gap-2 px-8 bg-transparent" asChild>
+              <Link href="https://wa.link/d9r319" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="h-4 w-4" />
+                Book a Consultation
+              </Link>
             </Button>
           </div>
 

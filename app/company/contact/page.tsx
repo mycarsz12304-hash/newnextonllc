@@ -22,10 +22,11 @@ const contactMethods = [
   },
   {
     icon: MessageSquare,
-    title: "Live Chat",
-    description: "Mon-Fri, 9am-6pm EST",
-    action: "Start Chat",
-    href: "#",
+    title: "WhatsApp",
+    description: "Chat with us instantly",
+    action: "Message on WhatsApp",
+    href: "https://wa.link/d9r319",
+    external: true,
   },
   {
     icon: Phone,
@@ -99,6 +100,7 @@ export default function ContactPage() {
                   <Link
                     href={method.href}
                     className="text-primary font-medium hover:underline"
+                    {...(method.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   >
                     {method.action}
                   </Link>
