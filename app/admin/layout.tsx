@@ -5,7 +5,6 @@ import React from "react"
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
 import {
   LayoutDashboard,
   Users,
@@ -16,11 +15,12 @@ import {
   Settings,
   LogOut,
   Menu,
-  X,
   Building2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+const ADMIN_EMAIL = "enterprisesnexton@gmail.com";
 
 const navItems = [
   { href: "/admin", icon: LayoutDashboard, label: "Dashboard" },
@@ -44,26 +44,22 @@ export default function AdminLayout({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const supabase = createClient();
-
-    async function checkAuth() {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (!user) {
-        router.push("/admin/login");
-      } else {
-        setUser(user);
-      }
-      setLoading(false);
+    // Check for admin session cookie
+    const cookies = document.cookie.split(';');
+    const adminSession = cookies.find(c => c.trim().startsWith('admin_session='));
+    const isAuthenticated = adminSession?.includes('authenticated');
+    
+    if (!isAuthenticated) {
+      router.push("/admin/login");
+    } else {
+      setUser({ email: ADMIN_EMAIL });
     }
-
-    checkAuth();
+    setLoading(false);
   }, [router]);
 
-  const handleLogout = async () => {
-    const supabase = createClient();
-    await supabase.auth.signOut();
+  const handleLogout = () => {
+    // Clear the admin session cookie
+    document.cookie = "admin_session=; path=/; max-age=0";
     router.push("/admin/login");
   };
 

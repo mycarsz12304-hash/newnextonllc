@@ -146,12 +146,9 @@ export default function HelpCenterPage() {
                   <ul className="space-y-2">
                     {category.articles.map((article) => (
                       <li key={article}>
-                        <Link
-                          href="#"
-                          className="text-sm text-primary hover:underline"
-                        >
+                        <span className="text-sm text-primary cursor-pointer hover:underline">
                           {article}
-                        </Link>
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -238,12 +235,16 @@ export default function HelpCenterPage() {
                   <MessageSquare className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">
-                  Live Chat
+                  WhatsApp
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  Available Mon-Fri, 9am-6pm EST
+                  Chat with us instantly
                 </p>
-                <Button>Start Chat</Button>
+                <Button asChild>
+                  <Link href="https://wa.link/d9r319" target="_blank" rel="noopener noreferrer">
+                    Message Us
+                  </Link>
+                </Button>
               </CardContent>
             </Card>
           </div>

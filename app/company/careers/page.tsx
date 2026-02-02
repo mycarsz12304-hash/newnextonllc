@@ -226,7 +226,9 @@ export default function CareersPage() {
                         </span>
                       </div>
                     </div>
-                    <Button>Apply Now</Button>
+                    <Button asChild>
+                      <Link href="mailto:careers@nextonenterprises.com">Apply Now</Link>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>

@@ -14,7 +14,7 @@ const featuredPost = {
   author: "Sarah Johnson",
   date: "Jan 28, 2026",
   readTime: "15 min read",
-  slug: "#",
+  slug: "/services/llc-formation",
 };
 
 const posts = [
@@ -26,7 +26,7 @@ const posts = [
     author: "Michael Chen",
     date: "Jan 25, 2026",
     readTime: "8 min read",
-    slug: "#",
+    slug: "/resources/state-guides",
   },
   {
     title: "How to Open a US Bank Account as a Non-Resident",
@@ -36,7 +36,7 @@ const posts = [
     author: "Emily Rodriguez",
     date: "Jan 22, 2026",
     readTime: "10 min read",
-    slug: "#",
+    slug: "/resources/help-center",
   },
   {
     title: "Understanding US Tax Obligations for Foreign-Owned LLCs",
@@ -46,7 +46,7 @@ const posts = [
     author: "David Park",
     date: "Jan 19, 2026",
     readTime: "12 min read",
-    slug: "#",
+    slug: "/resources/tax-guide",
   },
   {
     title: "5 Mistakes to Avoid When Forming Your US LLC",
@@ -56,7 +56,7 @@ const posts = [
     author: "Sarah Johnson",
     date: "Jan 15, 2026",
     readTime: "6 min read",
-    slug: "#",
+    slug: "/resources/llc-vs-corporation",
   },
   {
     title: "EIN Application Process for Non-Residents Explained",
@@ -66,7 +66,7 @@ const posts = [
     author: "Michael Chen",
     date: "Jan 12, 2026",
     readTime: "7 min read",
-    slug: "#",
+    slug: "/services/ein-application",
   },
   {
     title: "Using Stripe and PayPal with Your US LLC",
@@ -76,7 +76,7 @@ const posts = [
     author: "Emily Rodriguez",
     date: "Jan 8, 2026",
     readTime: "9 min read",
-    slug: "#",
+    slug: "/resources/help-center",
   },
 ];
 
@@ -182,26 +182,25 @@ export default function BlogPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post) => (
-              <Card
-                key={post.title}
-                className="border-0 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <CardContent className="p-6">
-                  <Badge variant="secondary" className="mb-3">
-                    {post.category}
-                  </Badge>
-                  <h3 className="font-semibold text-foreground mb-2 line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between text-xs text-muted-foreground">
-                    <span>{post.date}</span>
-                    <span>{post.readTime}</span>
-                  </div>
-                </CardContent>
-              </Card>
+              <Link key={post.title} href={post.slug}>
+                <Card className="border-0 shadow-sm hover:shadow-md transition-shadow cursor-pointer h-full">
+                  <CardContent className="p-6">
+                    <Badge variant="secondary" className="mb-3">
+                      {post.category}
+                    </Badge>
+                    <h3 className="font-semibold text-foreground mb-2 line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between text-xs text-muted-foreground">
+                      <span>{post.date}</span>
+                      <span>{post.readTime}</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-12">

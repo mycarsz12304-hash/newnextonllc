@@ -4,12 +4,15 @@ import React from "react"
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Building2, Loader2 } from "lucide-react";
+
+// Admin credentials
+const ADMIN_EMAIL = "enterprisesnexton@gmail.com";
+const ADMIN_PASSWORD = "Nexton@2580N";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -23,17 +26,17 @@ export default function AdminLoginPage() {
     setError("");
     setLoading(true);
 
-    const supabase = createClient();
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+    // Simulate network delay
+    await new Promise(resolve => setTimeout(resolve, 500));
 
-    if (error) {
-      setError(error.message);
-      setLoading(false);
-    } else {
+    // Check credentials
+    if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+      // Set a session cookie/flag
+      document.cookie = "admin_session=authenticated; path=/; max-age=86400";
       router.push("/admin");
+    } else {
+      setError("Invalid email or password");
+      setLoading(false);
     }
   };
 

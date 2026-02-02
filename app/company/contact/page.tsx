@@ -81,7 +81,7 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Methods */}
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {contactMethods.map((method) => (
               <Card
                 key={method.title}
@@ -186,8 +186,10 @@ export default function ContactPage() {
                     placeholder="How can we help you?"
                   />
                 </div>
-                <Button size="lg" className="w-full">
-                  Send Message
+                <Button size="lg" className="w-full" type="button" asChild>
+                  <Link href="https://wa.link/d9r319" target="_blank" rel="noopener noreferrer">
+                    Send Message via WhatsApp
+                  </Link>
                 </Button>
               </form>
             </div>
