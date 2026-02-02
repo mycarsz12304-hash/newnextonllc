@@ -80,7 +80,7 @@ export default function BusinessAddressPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
-                <Link href="/#pricing">
+                <Link href="/order">
                   Get Your Address <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -251,7 +251,7 @@ export default function BusinessAddressPage() {
                 </li>
               </ul>
               <Button size="lg" className="w-full" asChild>
-                <Link href="/#pricing">Get Your Business Address</Link>
+                <Link href="/order?plan=business">Get Your Business Address</Link>
               </Button>
             </CardContent>
           </Card>
@@ -274,7 +274,7 @@ export default function BusinessAddressPage() {
             className="bg-background text-foreground hover:bg-background/90"
             asChild
           >
-            <Link href="/#pricing">
+            <Link href="/order">
               Get Started <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

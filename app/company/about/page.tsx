@@ -249,7 +249,7 @@ export default function AboutPage() {
             className="bg-background text-foreground hover:bg-background/90"
             asChild
           >
-            <Link href="/#pricing">
+            <Link href="/order">
               Get Started <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

@@ -85,7 +85,7 @@ export default function EINApplicationPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
-                <Link href="/#pricing">
+                <Link href="/order">
                   Get Your EIN <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -209,7 +209,7 @@ export default function EINApplicationPage() {
                   </li>
                 </ul>
                 <Button className="w-full bg-transparent" variant="outline" asChild>
-                  <Link href="/#pricing">Get EIN Only</Link>
+                  <Link href="/order?plan=starter">Get EIN Only</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -238,7 +238,7 @@ export default function EINApplicationPage() {
                   </li>
                 </ul>
                 <Button className="w-full" asChild>
-                  <Link href="/#pricing">Get LLC + EIN</Link>
+                  <Link href="/order?plan=business">Get LLC + EIN</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -262,7 +262,7 @@ export default function EINApplicationPage() {
             className="bg-background text-foreground hover:bg-background/90"
             asChild
           >
-            <Link href="/#pricing">
+            <Link href="/order">
               Start Your Application <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

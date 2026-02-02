@@ -80,7 +80,7 @@ export default function RegisteredAgentPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild>
-                  <Link href="/#pricing">
+                  <Link href="/order">
                     Get Started <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -103,7 +103,7 @@ export default function RegisteredAgentPage() {
                 ))}
               </div>
               <Button size="lg" className="w-full mt-6" asChild>
-                <Link href="/#pricing">First Year Free with LLC</Link>
+                <Link href="/order?plan=business">First Year Free with LLC</Link>
               </Button>
             </div>
           </div>
@@ -200,7 +200,7 @@ export default function RegisteredAgentPage() {
             className="bg-background text-foreground hover:bg-background/90"
             asChild
           >
-            <Link href="/#pricing">
+            <Link href="/order">
               Form Your LLC Now <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

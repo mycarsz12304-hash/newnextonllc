@@ -80,7 +80,7 @@ export default function AnnualReportsPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild>
-                  <Link href="/#pricing">
+                  <Link href="/order">
                     Get Started <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -218,7 +218,7 @@ export default function AnnualReportsPage() {
                 </li>
               </ul>
               <Button size="lg" className="w-full" asChild>
-                <Link href="/#pricing">Add to Your Package</Link>
+                <Link href="/order?plan=enterprise">Add to Your Package</Link>
               </Button>
             </CardContent>
           </Card>
@@ -241,7 +241,7 @@ export default function AnnualReportsPage() {
             className="bg-background text-foreground hover:bg-background/90"
             asChild
           >
-            <Link href="/#pricing">
+            <Link href="/order">
               Get Started <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

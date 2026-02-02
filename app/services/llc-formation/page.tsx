@@ -100,7 +100,7 @@ export default function LLCFormationPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
-                <Link href="/#pricing">
+                <Link href="/order">
                   Start Your LLC <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -199,7 +199,7 @@ export default function LLCFormationPage() {
                 your complete information, or we will refund our service fee.
               </p>
               <Button size="lg" className="w-full" asChild>
-                <Link href="/#pricing">View Pricing Plans</Link>
+                <Link href="/order">View Pricing Plans</Link>
               </Button>
             </div>
           </div>
@@ -222,7 +222,7 @@ export default function LLCFormationPage() {
             className="bg-background text-foreground hover:bg-background/90"
             asChild
           >
-            <Link href="/#pricing">
+            <Link href="/order">
               Get Started Today <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

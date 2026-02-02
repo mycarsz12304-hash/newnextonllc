@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -213,9 +214,11 @@ export function StateComparison() {
                 </div>
               </div>
 
-              <Button className="w-full" size="lg">
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <Button className="w-full" size="lg" asChild>
+                <Link href={`/order?plan=${selectedPackage.toLowerCase()}`}>
+                  Get Started
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </CardContent>
           </Card>
@@ -337,8 +340,8 @@ export function StateComparison() {
                   formation, trusted by over 80% of our international clients.
                 </p>
               </div>
-              <Button variant="outline" className="shrink-0 bg-transparent">
-                Learn More
+              <Button variant="outline" className="shrink-0 bg-transparent" asChild>
+                <Link href="/resources/state-guides">Learn More</Link>
               </Button>
             </div>
           </CardContent>
