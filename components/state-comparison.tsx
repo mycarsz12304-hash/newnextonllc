@@ -215,7 +215,7 @@ export function StateComparison() {
               </div>
 
               <Button className="w-full" size="lg" asChild>
-                <Link href={`/order?plan=${selectedPackage.toLowerCase()}`}>
+                <Link href="https://wa.link/d9r319" target="_blank" rel="noopener noreferrer">
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>

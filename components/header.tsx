@@ -34,11 +34,8 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Button variant="ghost" size="sm">
-            Log In
-          </Button>
           <Button size="sm" asChild>
-            <Link href="/order">Get Started</Link>
+            <Link href="https://wa.link/d9r319" target="_blank" rel="noopener noreferrer">Get Started</Link>
           </Button>
         </div>
 
@@ -68,11 +65,8 @@ export function Header() {
               FAQ
             </Link>
             <div className="flex flex-col gap-2 pt-4">
-              <Button variant="outline" size="sm" className="w-full bg-transparent">
-                Log In
-              </Button>
               <Button size="sm" className="w-full" asChild>
-                <Link href="/order">Get Started</Link>
+                <Link href="https://wa.link/d9r319" target="_blank" rel="noopener noreferrer">Get Started</Link>
               </Button>
             </div>
           </nav>
