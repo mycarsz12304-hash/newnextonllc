@@ -114,7 +114,7 @@ export function Pricing() {
                 size="lg"
                 asChild
               >
-                <Link href={`/order?plan=${plan.name.toLowerCase()}`}>
+                <Link href="https://wa.link/d9r319" target="_blank" rel="noopener noreferrer">
                   {plan.cta}
                 </Link>
               </Button>
