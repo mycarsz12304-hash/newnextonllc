@@ -44,18 +44,24 @@ export default function AdminLayout({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Skip auth check for login page
+    if (pathname === "/admin/login") {
+      setLoading(false);
+      return;
+    }
+    
     // Check for admin session cookie
     const cookies = document.cookie.split(';');
     const adminSession = cookies.find(c => c.trim().startsWith('admin_session='));
     const isAuthenticated = adminSession?.includes('authenticated');
     
     if (!isAuthenticated) {
-      router.push("/admin/login");
+      window.location.href = "/admin/login";
     } else {
       setUser({ email: ADMIN_EMAIL });
+      setLoading(false);
     }
-    setLoading(false);
-  }, [router]);
+  }, [router, pathname]);
 
   const handleLogout = () => {
     // Clear the admin session cookie
@@ -69,6 +75,11 @@ export default function AdminLayout({
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
       </div>
     );
+  }
+
+  // For login page, render children directly without the admin chrome
+  if (pathname === "/admin/login") {
+    return <>{children}</>;
   }
 
   if (!user) {
