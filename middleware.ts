@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server'
 
+// Simple cookie-based admin authentication middleware
 export async function middleware(request: NextRequest) {
   const response = NextResponse.next({
     request,
