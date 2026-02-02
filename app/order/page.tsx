@@ -122,9 +122,16 @@ export default function OrderPage() {
   useEffect(() => {
     const planParam = searchParams.get("plan")
     if (planParam && PLANS.find(p => p.id === planParam)) {
-      setFormData(prev => ({ ...prev, plan: planParam }))
+      setFormData(prev => {
+        // Only update if different to prevent re-renders
+        if (prev.plan !== planParam) {
+          return { ...prev, plan: planParam }
+        }
+        return prev
+      })
     }
-  }, [searchParams])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const updateFormData = (field: keyof FormData, value: string | string[]) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
